@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:FTPFile.Views"
              mc:Ignorable="d" 
              Background="White"
-             d:DesignHeight="80" d:DesignWidth="800">
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="100" d:DesignWidth="800">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -14,48 +15,29 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+           
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <TextBlock
-                Text="IP du serveur / Hôte"
-                FontWeight="DemiBold"
-                Foreground="#444444"
-                />
-            <TextBlock
-                Text="Nom d'utilisateur"
-                Grid.Column="1"
-                Margin="5 0 0 0"
-                FontWeight="DemiBold"
-                Foreground="#444444"
-                />
-            <TextBlock
-                Text="Mot de passe"
-                Grid.Column="2"
-                Margin="5 0 0 0"
-                FontWeight="DemiBold"
-                Foreground="#444444"
-                />
+            
             <TextBox
-                Grid.Row="1"
                 Margin="0 0 5 0"
                 FontWeight="DemiBold"
                 FontSize="16"
+                materialDesign:HintAssist.Hint="IP du serveur / Hôte"
+                materialDesign:HintAssist.IsFloating="True"
                 Foreground="#222222"
                 VerticalContentAlignment="Center"
                 />
             <TextBox
                 Margin="5 0 0 0"
-                Grid.Row="1"
                 FontWeight="DemiBold"
                 FontSize="16"
+                materialDesign:HintAssist.Hint="Nom d'utilisateur"
+                materialDesign:HintAssist.IsFloating="True"
                 Foreground="#222222"
                 VerticalContentAlignment="Center"
                 Grid.Column="1"
@@ -63,19 +45,31 @@
             <PasswordBox
                 VerticalContentAlignment="Center"
                 Margin="5 0 0 0"
+                materialDesign:HintAssist.Hint="Mot de passe"
+                materialDesign:HintAssist.IsFloating="True"
                 FontWeight="DemiBold"
-                Grid.Row="1"
                 FontSize="16"
                 Foreground="#222222"
                 Grid.Column="2"
                 />
             <Button
                 Margin="5 0 0 0"
-                Grid.Row="1"
-                Content="Se connecter"
-                Padding="10"
                 Grid.Column="3"
-                />
+                Background="RoyalBlue"
+                BorderBrush="Transparent"
+                >
+                <Button.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:PackIcon
+                            Kind="LanConnect"
+                            />
+                    </Grid>
+                </Button.Content>
+            </Button>
         </Grid>
         <ProgressBar
             Grid.Row="1"
